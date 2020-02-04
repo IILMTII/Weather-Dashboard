@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="wdash.css">
+    <script src="https://rawgit.com/moment/moment/2.2.1/min/moment.min.js"></script>
+    <script src="wdash.js" defer></script>
+</head>
+<body>
+    <div class="main">Weather Dashboard</div>
+    <br><br>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3" id="cities">
+          <label for="basic-url">Search for a City:</label>
+            <div class="input-group mb-3">
+              <input type="text" id="cityInput" class="form-control" placeholder="City" aria-label="Recipient's username" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="input-group-text" id="citySearch"><i class="fa fa-search"></i></button>
+              </div>
+              
+                <!-- <ul class="list-group">
+                  <li class="list-group-item">Wuhan</li>
+                  <li class="list-group-item">Dubai</li>
+                </ul> -->
+            </div>
+            <div class="container" id="group">
+              <div class="row">
+                  <ul class="list-group">
+                    <!-- <li class="list-group-item" id="city">Wuh</li>
+                    <li class="list-group-item" id="city">Wuh</li> -->
+                  </ul>
+              </div>
+            </div>
+        </div>
+        <div class="col-sm-8 hide" id="display">
+          
+            <div class="row">
+              <div class="col-sm-12" id="wdisplay">
+                <ul class="parameters">
+                  <h2></h2>
+                  <li class="temperature groupparam">Temperature:</li>
+                  <li class="humidity groupparam">Humidity:</li>
+                  <li class="wspeed groupparam">Wind Speed:</li>
+                  <li class="uvindex groupparam">UV Index</li>
+                </ul>
+              </div>
+            </div>
+          
+          
+            <div class="row">
+              <div class="col-sm-12" id="wdisplay2">
+                  <h4>Five day forecast:</h4>
+                    
+                    <div class="container" >
+                      <div class="row" id="forecast">
+                        
+                      </div>
+                    </div>
+
+              </div>
+            </div>
+          
+        </div>   
+      </div>
+    </div>  
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+.main{
+    width:100vw;
+    height: 50px;
+    background:black;
+    color: white;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+ul {
+    list-style: none;
+}
+
+#cities{
+    background-color: lightgrey;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+
+/* #display{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+} */
+
+#wdisplay{
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin: 10px;
+    justify-content: center;
+}
+
+.city{
+    background-color: lightblue;
+    cursor: pointer;
+}
+    
+#group{
+    overflow: hidden;
+}
+
+.hide{
+    display: none;
+}
+
+.card{
+    background-color: lightblue;
+}
