@@ -46,7 +46,7 @@ $(document).ready(function(){
                     var test = $('<li class="list-group-item city"></li>').addClass(cityId.toString()).text(city.charAt(0).toUpperCase()+city.substring(1));
                     console.log(test);
                     $(".list-group").append(test);
-                    var iconUrl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+                    var iconUrl = "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
                     console.log(uv);
                     $("h2").text(response.name+" ("+moment.utc().add(response.timezone, 'seconds').format('L')+") ").append("<img src='" + iconUrl  + "'>");
                     var kel = parseFloat(response.main.temp);
@@ -54,14 +54,14 @@ $(document).ready(function(){
                     $(".temperature").text('Temperature: '+temp.toFixed(2)+' F');
                     $(".humidity").text('Humidity: '+response.main.humidity+'%');
                     $(".wspeed").text('Wind Speed: '+response.wind.speed+' MPH');
-                    var uv = "http://api.openweathermap.org/data/2.5/uvi?appid=ff0ef95889be9e9acca9e3480360215c&lat="+response.coord.lat+"&lon="+response.coord.lon;
+                    var uv = "https://api.openweathermap.org/data/2.5/uvi?appid=ff0ef95889be9e9acca9e3480360215c&lat="+response.coord.lat+"&lon="+response.coord.lon;
                     $.ajax({
                         url: uv,
                         method: 'GET'
                         }).then(function (response1) {
                             $(".uvindex").text('UV Index: '+response1.value); 
                         });
-                    var fDays = "http://api.openweathermap.org/data/2.5/forecast?appid=ff0ef95889be9e9acca9e3480360215c&q="+response.name+","+ response.sys.country;
+                    var fDays = "https://api.openweathermap.org/data/2.5/forecast?appid=ff0ef95889be9e9acca9e3480360215c&q="+response.name+","+ response.sys.country;
                     $.ajax({
                         url: fDays,
                         method: 'GET'
@@ -69,7 +69,7 @@ $(document).ready(function(){
                             console.log(response2)
                             for(var i=1;i<=5;i++){
                                 $('#date'+i+'').text(response2.list[parseInt(i*7.5)].dt_txt.substring(0, 10));
-                                var iconUrl = "http://openweathermap.org/img/w/" + response2.list[parseInt(i*7.5)].weather[0].icon + ".png";
+                                var iconUrl = "https://openweathermap.org/img/w/" + response2.list[parseInt(i*7.5)].weather[0].icon + ".png";
                                 $('#icon'+i+'').html('<img src='+iconUrl+'>');
                                 var kel = parseFloat(response2.list[parseInt(i*7.5)].main.temp_max);
                                 var temp = (kel - 273.15) * (9/5) + 32;
@@ -120,7 +120,7 @@ $(document).ready(function(){
                         // var test = $('<li class="list-group-item city"></li>').addClass(cityId.toString()).text(city);
                         // console.log(test);
                         // $(".list-group").append(test);
-                        var iconUrl = "http://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
+                        var iconUrl = "https://openweathermap.org/img/w/" + response.weather[0].icon + ".png";
                         console.log(uv);
                         $("h2").text(response.name+" ("+moment.utc().add(response.timezone, 'seconds').format('L')+") ").append("<img src='" + iconUrl  + "'>");
                         var kel = parseFloat(response.main.temp);
@@ -128,14 +128,14 @@ $(document).ready(function(){
                         $(".temperature").text('Temperature: '+temp.toFixed(2)+' F');
                         $(".humidity").text('Humidity: '+response.main.humidity+'%');
                         $(".wspeed").text('Wind Speed: '+response.wind.speed+' MPH');
-                        var uv = "http://api.openweathermap.org/data/2.5/uvi?appid=ff0ef95889be9e9acca9e3480360215c&lat="+response.coord.lat+"&lon="+response.coord.lon;
+                        var uv = "https://api.openweathermap.org/data/2.5/uvi?appid=ff0ef95889be9e9acca9e3480360215c&lat="+response.coord.lat+"&lon="+response.coord.lon;
                         $.ajax({
                             url: uv,
                             method: 'GET'
                             }).then(function (response1) {
                                 $(".uvindex").text('UV Index: '+response1.value); 
                             });
-                        var fDays = "http://api.openweathermap.org/data/2.5/forecast?appid=ff0ef95889be9e9acca9e3480360215c&q="+response.name+","+ response.sys.country;
+                        var fDays = "https://api.openweathermap.org/data/2.5/forecast?appid=ff0ef95889be9e9acca9e3480360215c&q="+response.name+","+ response.sys.country;
                         $.ajax({
                             url: fDays,
                             method: 'GET'
@@ -143,7 +143,7 @@ $(document).ready(function(){
                                 console.log(response2)
                                 for(var i=1;i<=5;i++){
                                     $('#date'+i+'').text(response2.list[parseInt(i*7.5)].dt_txt.substring(0, 10));
-                                    var iconUrl = "http://openweathermap.org/img/w/" + response2.list[parseInt(i*7.5)].weather[0].icon + ".png";
+                                    var iconUrl = "https://openweathermap.org/img/w/" + response2.list[parseInt(i*7.5)].weather[0].icon + ".png";
                                     $('#icon'+i+'').html('<img src='+iconUrl+'>');
                                     var kel = parseFloat(response2.list[parseInt(i*7.5)].main.temp_max);
                                     var temp = (kel - 273.15) * (9/5) + 32;
@@ -182,7 +182,4 @@ $(document).ready(function(){
             });
         }
 });
-// $("#clearButton").on("click", function(event){
-//     event.preventDefault()
-//     $("#resultsContainer").empty()
-// })
+
